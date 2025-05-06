@@ -111,6 +111,14 @@ header {
   width: 100%;
 }
 
+.moon-icon {
+  transition: transform 0.5s ease;
+}
+
+.moon-icon:hover {
+  transform: rotate(20deg);
+}
+
 nav {
   display: flex;
   gap: 1rem;
