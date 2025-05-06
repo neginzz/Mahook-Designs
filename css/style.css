@@ -1,11 +1,11 @@
 /* Base styles */
 :root {
   --background: hsla(0, 0%, 99%, 1); /* #fcfcfc */
-  /* --foreground: hsla(0, 0%, 12%, 1); #1e1e1e */
   --muted: hsla(215, 23%, 27%, 1); /* #344054 */
   --foreground: hsla(217, 24%, 27%, 1);
   --primary: hsla(221, 89%, 55%, 1); /* #155eef */
 
+  /* Social media backgrounds */
   --email-bg: hsla(0, 43%, 96%, 1); 
   --email-bg-hover: hsla(0, 43%, 93%, 1); 
   --linkedin-bg: hsla(200, 43%, 96%, 1); 
@@ -13,13 +13,18 @@
   --dribbble-bg: hsla(315, 100%, 98%, 1); 
   --dribbble-bg-hover: hsla(315, 100%, 95%, 1); 
 
+  /* Card and UI colors */
   --card1: hsla(0, 0%, 20%, 1); /* #323232 */
   --card2: hsla(227, 100%, 75%, 1); /* #7999ff */
   --card3: hsla(150, 51%, 59%, 1); /* #60ca95 */
   --border: hsla(216, 18%, 85%, 1); /* #d0d5dd */
+  
+  /* Footer colors */
   --footer-bg: hsla(0, 0%, 12%, 1); /* #1e1e1e */
   --footer-text: hsla(0, 0%, 100%, 1); /* #ffffff */
   --copyright-text: hsla(218, 15%, 65%, 1);
+  
+  /* Button colors */
   --resume-btn-bg: hsla(0, 0%, 100%, 1); /* #ffffff */
   --resume-btn-border: hsla(216, 18%, 85%, 1); /* #d0d5dd */
   --resume-btn-hover-bg: hsla(0, 0%, 94%, 1); /* #f0f0f0 */
@@ -63,7 +68,7 @@
   font-display: swap;
 }
 
-
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -181,6 +186,7 @@ main {
   max-width: 800px;
 }
 
+/* Social links and tooltips */
 .social-links {
   display: flex;
   gap: 24px;
@@ -240,21 +246,33 @@ main {
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   z-index: 10;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  color: var(--tooltip-text);
 }
+
+/* .email-icon.tooltip::after {
+  background-color: var(--email-tooltip-bg);
+}
+
+.linkedin-icon.tooltip::after {
+  background-color: var(--linkedin-tooltip-bg);
+}
+
+.dribbble-icon.tooltip::after {
+  background-color: var(--dribbble-tooltip-bg);
+} */
 
 .tooltip:hover::after {
   opacity: 1;
   visibility: visible;
+  bottom: -40px;
 }
 
-
-
-/* Wrapper for animations */
+/* Project cards */
 .project-card-wrapper {
   will-change: transform, opacity;
 }
 
-/* Project cards */
 .projects {
   display: grid;
   gap: 2rem;
@@ -310,6 +328,7 @@ footer {
   justify-content: center;
   gap: 1rem;
 }
+
 footer .footer-bottom-container {
   display: flex;
   gap: 1.5rem;
@@ -317,6 +336,7 @@ footer .footer-bottom-container {
   justify-content: space-between;
   align-items: center;
 }
+
 .footer-links a,
 .footer-nav a {
   color: var(--footer-text);
@@ -342,7 +362,6 @@ footer .footer-bottom-container {
 }
 
 /* About page styles */
-
 
 .about-content {
   display: grid;
@@ -434,6 +453,7 @@ footer .footer-bottom-container {
   grid-column: 1 / 3;
 }
 
+/* -- Responsive styles -- */
 
 /* Tablet styles */
 @media (max-width: 768px) {
@@ -452,7 +472,7 @@ footer .footer-bottom-container {
   }
 }
 
-/* Mobile-specific styles based on Figma frames */
+/* Mobile-specific styles */
 @media (max-width: 480px) {
 
   .hero h1 {
@@ -464,6 +484,7 @@ footer .footer-bottom-container {
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
+
   .social-links {
     margin-bottom: 4rem;
   }
@@ -473,7 +494,6 @@ footer .footer-bottom-container {
   }
 
   footer .footer-bottom-container {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -483,7 +503,6 @@ footer .footer-bottom-container {
 
   /* About page mobile styles */
   .about-content {
-    display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -512,9 +531,11 @@ footer .footer-bottom-container {
   .education{
     grid-column: 1/1;
   }
+
   .experience{
     grid-column: 1/1;
   }
+
   .bio p {
     font-size: 0.9375rem;
   }
@@ -539,7 +560,6 @@ footer .footer-bottom-container {
 }
 
 /* === Animations === */
-
 .animate {
   opacity: 0;
 }
