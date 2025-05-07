@@ -476,28 +476,27 @@ footer .footer-bottom-container {
 
 
 /* ===== RESPONSIVE STYLES ===== */
-/* Mobile styles 480*/
-@media (max-width: 768px) {
-    /* Adjust home page elements */
-  .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 2rem;
+/* About page responsive styles */
+@media (max-width: 1024px) {
+  /* Only apply to about page */
+  .about-page .experience h2,
+  .about-page .education h2,
+  .about-page .contact h2 {
+    font-size: 1.4rem;
   }
+}
 
-  .tagline {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
 
-  .social-links {
-    margin-bottom: 4rem;
-  }
+@media (max-width: 900px) {
+  /* Only apply to about page */
+  .about-page-grid {
+    gap: 2.5rem;
+}
+}
 
-  .project-card {
-    height: 200px;
-  }
 
-  /* Adjust footer layout */
+@media (max-width: 600px) {
+  /* Adjust footer layout for smaller screens */
   footer .footer-bottom-container {
     flex-direction: column;
     justify-content: space-between;
@@ -506,7 +505,7 @@ footer .footer-bottom-container {
     gap: 1.5rem;
   }
 
-  /* Redefine about page grid for mobile */
+  /* Redefine about page grid for smaller screens */
   .about-page-grid {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -518,13 +517,41 @@ footer .footer-bottom-container {
     gap: 2rem;
   }
 
-  /* Adjust profile image for mobile */
+  /* Adjust profile image for smaller screens */
   .profile-image {
     max-width: 100%;
     margin: 0 auto;
   }
+}
 
-  /* Adjust typography for mobile */
+/* Mobile styles - applies to both index and about pages */
+@media (max-width: 480px) {
+  /* Index page specific styles */
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  /* .social-links {
+    margin-bottom: 4rem;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 48px;
+    height: 48px;
+  } */
+
+  /* .project-card {
+    height: 200px;
+  } */
+
+  /* About page specific styles */
   .bio p {
     font-size: 0.9375rem;
   }
