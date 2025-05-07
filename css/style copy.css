@@ -1,6 +1,5 @@
-/* ===== ROOT VARIABLES ===== */
+/* Base styles */
 :root {
-  /* Base colors */
   --background: hsla(0, 0%, 99%, 1); /* #fcfcfc */
   --muted: hsla(215, 23%, 27%, 1); /* #344054 */
   --foreground: hsla(217, 24%, 27%, 1);
@@ -36,7 +35,7 @@
   --tooltip-text: hsla(0, 0%, 100%, 1); /* #ffffff */
 }
 
-/* ===== LOCAL FONT INTEGRATION ===== */
+/* Local font integration */
 @font-face {
   font-family: "Inter";
   src: url("../assets/fonts/Inter-Regular.woff2") format("woff2");
@@ -69,7 +68,7 @@
   font-display: swap;
 }
 
-/* ===== RESET & BASE STYLES ===== */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
@@ -101,7 +100,7 @@ a:hover {
   color: var(--primary);
 }
 
-/* ===== HEADER STYLES ===== */
+/* Header styles */
 header {
   display: flex;
   justify-content: space-between;
@@ -158,7 +157,7 @@ nav a.active {
   border-color: var(--resume-btn-hover-border);
 }
 
-/* ===== MAIN CONTENT STYLES ===== */
+/* Main content styles */
 main {
   flex: 1;
   padding: 1rem 1.5rem 3rem;
@@ -167,7 +166,7 @@ main {
   width: 100%;
 }
 
-/* ===== HOME PAGE STYLES ===== */
+/* Home page styles */
 .hero {
   margin-bottom: 7rem;
 }
@@ -195,7 +194,7 @@ main {
   max-width: 800px;
 }
 
-/* ===== SOCIAL LINKS & TOOLTIPS ===== */
+/* Social links and tooltips */
 .social-links {
   display: flex;
   gap: 24px;
@@ -270,7 +269,7 @@ main {
   top: -45px;
 }
 
-/* ===== PROJECT CARDS ===== */
+/* Project cards */
 .project-card-wrapper {
   will-change: transform, opacity;
 }
@@ -304,7 +303,7 @@ main {
   background-color: var(--card3);
 }
 
-/* ===== FOOTER STYLES ===== */
+/* Footer styles */
 footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
@@ -363,51 +362,48 @@ footer .footer-bottom-container {
   color: var(--copyright-text);
 }
 
-/* ===== ABOUT PAGE STYLES ===== */
-/* Main grid layout for about page */
-.about-page-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "photo bio"
-    "education experience"
-    "contact contact";
-  gap: 3rem;
+/* About page styles */
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 5rem;
+  gap: 3rem;
 }
 
-/* Grid area assignments */
 .profile-image {
-  grid-area: photo;
+  flex: 0 0 300px;
   border-radius: 1rem;
   overflow: hidden;
-  height: auto;
+  height: 300px;
+  order: 1;
 }
 
 .bio {
-  grid-area: bio;
+  flex: 1;
+  min-width: 300px; /* Ensures bio has enough width before wrapping */
+  order: 2;
 }
 
-.education {
-  grid-area: education;
+/* When the container wraps, reorder elements */
+@media (max-width: 770px) {
+  .profile-image {
+    order: 2;
+    margin: 0 auto; /* Center the profile image when wrapped */
+  }
+
+  .bio {
+    order: 1;
+    width: 100%;
+  }
 }
 
-.experience {
-  grid-area: experience;
-}
 
-
-.contact {
-  grid-area: contact;
-}
-
-/* Profile image styles */
 .profile-photo {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
-  border-radius: 1rem;
   transform-origin: center;
   transition: transform 0.8s ease;
 }
@@ -416,7 +412,10 @@ footer .footer-bottom-container {
   transform: scale(1.1);
 }
 
-/* Bio text styles */
+/* .bio {
+  flex: 1;
+} */
+
 .bio p {
   margin-bottom: 1.5rem;
   color: var(--foreground);
@@ -436,7 +435,12 @@ footer .footer-bottom-container {
   font-size: 1.25rem;
 }
 
-/* Section heading styles */
+.experience-education {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+}
+
 .experience h2,
 .education h2,
 .contact h2 {
@@ -446,7 +450,6 @@ footer .footer-bottom-container {
   color: var(--foreground);
 }
 
-/* Job and education entry styles */
 .job,
 .degree {
   margin-bottom: 1.5rem;
@@ -474,11 +477,70 @@ footer .footer-bottom-container {
   font-size: 0.875rem;
 }
 
+.contact {
+  grid-column: 1 / 3;
+}
 
-/* ===== RESPONSIVE STYLES ===== */
-/* Mobile styles 480*/
-@media (max-width: 768px) {
-    /* Adjust home page elements */
+/* -- Responsive styles -- */
+
+/* Tablet styles */
+/* @media (max-width: 768px) { */
+  /* .about-content { */
+    /* grid-template-columns: minmax(250px, 1fr) 1.5fr;
+    gap: 2rem; */
+/*     
+    flex-direction: row;
+    align-items: flex-start;
+  } */
+  /* .profile-image {
+    flex: 0 0 250px;
+    margin-right: 2rem;
+    height: 300px;
+  } */
+
+/* 
+  .experience-education {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+  } */
+
+  /* .profile-photo {
+    min-width: 220px;
+  } */
+  /* .hero h1 {
+    font-size: 5rem;
+  }
+
+  .tagline {
+    font-size: 1.75rem;
+  } */
+/* } */
+
+
+
+/* Fix for narrow biography at 564px */
+/* @media (max-width: 600px) and (min-width: 431px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .profile-image {
+    text-align: center;
+    order: 2;
+  }
+
+  .bio {
+    order: 1;
+  }
+
+  .profile-photo {
+    max-width: 400px;
+  }
+} */
+
+/* Mobile-specific styles */
+@media (max-width: 480px) {
   .hero h1 {
     font-size: 4rem;
     margin-bottom: 2rem;
@@ -497,7 +559,6 @@ footer .footer-bottom-container {
     height: 200px;
   }
 
-  /* Adjust footer layout */
   footer .footer-bottom-container {
     flex-direction: column;
     justify-content: space-between;
@@ -506,25 +567,51 @@ footer .footer-bottom-container {
     gap: 1.5rem;
   }
 
-  /* Redefine about page grid for mobile */
-  .about-page-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "bio"
-      "photo"
-      "experience"
-      "education"
-      "contact";
-    gap: 2rem;
-  }
+  /* About page mobile styles */
+  /* .about-content { */
+    /* grid-template-columns: 1fr;
+    gap: 2rem; */
+    /* flex-direction: column-reverse; */
+  /* } */
 
-  /* Adjust profile image for mobile */
   .profile-image {
+    /* text-align: center;
+    order: 2; */
+    /* flex: 0 0 auto; */
+    width: 100%;
     max-width: 100%;
-    margin: 0 auto;
+    /* margin: 0 0 1.5rem; */
+    
+    margin-bottom: 1.5rem;
+    height: 400px;
   }
 
-  /* Adjust typography for mobile */
+  .bio {
+    order: 1; /* Move bio before profile image */
+  }
+
+  .profile-photo {
+    max-width: 100%;
+    min-width: unset;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+  }
+
+  /* .about-content > .bio {
+    order: -1;
+  } */
+
+  .experience-education {
+    grid-template-columns: 1fr;
+    gap: 2.5rem 0;
+  }
+
+  .education,
+  .experience {
+    grid-column: 1/1;
+  }
+
   .bio p {
     font-size: 0.9375rem;
   }
@@ -552,7 +639,7 @@ footer .footer-bottom-container {
     }
 }
 
-/* ===== ANIMATIONS ===== */
+/* === Animations === */
 .animate {
   opacity: 0;
 }
