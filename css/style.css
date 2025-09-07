@@ -550,7 +550,8 @@ article .hero-subtitle {
 }
 
 .case-study .cs-section h2 {
-  font-size: 2.5rem;
+  /* font-size: 2.5rem; */
+  font-size:  clamp(2rem, 6vw + 0.1rem, 2.5rem);
   font-weight: 900;
   line-height: 0.8;
   text-align: center;
@@ -568,6 +569,12 @@ article .hero-subtitle {
   font-weight: 800;
   line-height: 1.5;
 }
+.case-study .cs-subsection .subsec-top-txt {
+  /* background-color: yellow; */
+  width: min(60rem, 100%);
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+}
 /* INTRO */
 .case-study .cs-introduction {
   width: min(60rem, 100%);
@@ -575,23 +582,14 @@ article .hero-subtitle {
 
 .case-study .cs-overview {
   display: grid;
-  /* grid-template-areas:
-    "overview overview"
-    "myrole tools"; */
+
   gap: 2rem 4rem;
-  /* Choose a min track size big enough so 3 cols never fit inside 60rem */
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-template-columns:repeat(auto-fit, minmax(min(24rem,100%), 1fr));
 }
 .case-study .cs-overview .overview-gp {
-  /* grid-area: overview; */
   grid-column: 1 / -1;
 }
-/* .case-study .cs-overview .role-gp {
-  grid-area: myrole;
-}
-.case-study .cs-overview .tools-gp {
-  grid-area: tools;
-} */
+
 /* INTRO end... */
 
 /* problem discovery*/
@@ -628,14 +626,7 @@ article .hero-subtitle {
   /* background-color: cadetblue; */
   margin-inline: auto;
 }
-.cs-subsection .subsec-top-txt {
-  /* background-color: yellow; */
-  width: min(60rem, 100%);
-  /* display: grid; */
-  /* gap: 0.75rem; */
-  margin-bottom: 1.5rem;
-  margin-inline: auto;
-}
+
 .user-comments-section img {
   width: min(51.5rem, 100%);
   margin-inline: auto;
@@ -658,34 +649,46 @@ article .hero-subtitle {
 .key-insights-section ul > li:not(:last-child) {
   margin-bottom: 0.75rem;
 }
-/* 11.Opportunity Areas */
+/* 11.Opportunity Areas & 15.Design Objectives */
 
 .cs-subsection .opportunity-areas-cards-wrap,
 .cs-subsection .design-objectives-cards-wrap {
   /* background-color: aquamarine; */
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 1rem;
   flex-wrap: wrap;
   padding-top: 0.75rem;
 }
 .cs-subsection .opportunity-areas-card,
 .cs-subsection .design-objectives-card {
   /* background-color: cadetblue; */
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--card-gradient1) 0%,
+    var(--card-gradient2) 100%
+  );
+  border: 1px solid var(--border);
+  border-radius: 1rem;
   padding: 1.5rem;
+
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   justify-items: center;
+  align-items: start;
+  flex: 1;
 }
 .cs-subsection .opportunity-areas-card img,
-.cs-subsection .design-objectives img {
+.cs-subsection .design-objectives-card img {
   max-width: 10rem;
 }
 .cs-subsection .opportunity-areas-card .cs-card-txt,
-.cs-subsection .design-objectives .cs-card-txt {
-  max-width: 16rem;
+.cs-subsection .design-objectives-card .cs-card-txt {
+  display: grid;
+  gap: 0.75rem;
+  width: min(16rem, 100%);
   text-align: center;
+  min-width: 12rem;
 }
 
 /* ***** 12.Personas Section */
@@ -693,7 +696,7 @@ article .hero-subtitle {
 .personas-section .personas-cards-wrap {
   width: min(70rem, 100%);
   margin-inline: auto;
-  
+
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
   gap: 1.5rem;
@@ -719,8 +722,9 @@ article .hero-subtitle {
 
 .personas-section .personas-card .personas-header {
   display: flex;
-  align-items: center;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .personas-header .personas-header-txt {
   display: flex;
@@ -756,7 +760,7 @@ article .hero-subtitle {
   line-height: 1.5;
   flex-grow: 1;
 }
-.personas-description strong{
+.personas-description strong {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: 700;
@@ -764,27 +768,103 @@ article .hero-subtitle {
 
 /* ***** end 12.Personas Section */
 
+/****** 13.Ideation ******/
+.case-study .cs-ideation .cs-subsection:not(.testing-section) {
+  /* background-color: cadetblue; */
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+
+/* ****** 14.brainstorming */
+.cs-ideation .brainstorming-img-wrap {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+.brainstorming-section .brainstorming-q {
+  background-color: var(--card-gradient2);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.brainstorming-img-wrap .brainstorming-note {
+  width: min(27rem, 100%);
+}
+.brainstorming-section .brainstorming-img-bottom {
+  padding-top: 5rem;
+}
+
+/* 16.Wireframes & User Stories */
+
+.cs-ideation .wireframe-section p:not(:first-of-type) {
+  padding-top: 2.5rem;
+}
+.cs-ideation .wireframe-section .wireframe-img-wrap {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 210px);
+
+  gap: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+  justify-content: center;
+}
+
 /* display none  */
 .case-study .final-design-section,
-.case-study .ideation-section,
 .case-study .takeaways-section {
   display: none;
 }
-.cs-subsection .brainstorming-img-wrap {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-  align-items: center;
+.case-study .testing-section {
+  width: min(75.25rem, 100%);
+  margin-inline: auto;
 }
-.brainstorming-img-wrap .brainstorming-note {
-  width: 421px;
+.testing-section .testing-row:not(.wide-row) {
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+.testing-section .testing-img-wrap {
+  display: grid;
+  gap: 3rem 5rem;
+  margin-top: 2.5rem;
+}
+.testing-img-wrap .testing-row {
+  /* background-color: antiquewhite; */
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.testing-img-wrap .testing-txt {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--card-gradient1) 0%,
+    var(--card-gradient2) 100%
+  );
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: min(21.75rem, 100%);
+  flex-grow: 1;
+  display: grid;
+  gap: 0.75rem;
+  align-items: center;
+  align-content: center;
+}
+/* .testing-img-wrap .testing-txt h4 {
+  margin-bottom: 0.75rem;
+} */
+.testing-img-wrap .testing-txt ul {
+  list-style: inside;
+}
+.testing-img-wrap .testing-img {
+  max-height: 456px;
 }
 
-.cs-subsection .testing-img-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
 .case-study .final-design-img {
   width: 240px;
 }
@@ -979,6 +1059,12 @@ footer .footer-bottom-container {
   }
 }
 
+@media (max-width: 500px) {
+  .cs-ideation .wireframe-section .wireframe-img-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   /* Adjust footer layout for smaller screens */
   footer .footer-bottom-container {
@@ -996,6 +1082,9 @@ footer .footer-bottom-container {
       "education"
       "contact";
     gap: 2rem;
+  }
+  .cs-ideation .brainstorming-img-wrap {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -1023,13 +1112,19 @@ footer .footer-bottom-container {
 
   /* gpt help end */
 }
+
+/* @media(max-width:490px){
+  .cs-ideation .wireframe-section .wireframe-img-wrap{
+    grid-template-columns: repeat(auto-fit,180px);
+}
+} */
+
 /* > 760px: FOUR columns; cells can shrink but will expand up to fill the row */
 @media (min-width: 761px) {
   .case-study .screen-img-wrap {
     grid-template-columns: repeat(4, minmax(3rem, 1fr));
   }
 }
-
 
 /* Mobile styles - applies to both index and about pages */
 @media (max-width: 480px) {
@@ -1070,7 +1165,6 @@ footer .footer-bottom-container {
   .tooltip:hover::after {
     top: -35px;
   }
-
 }
 
 /* ===== ANIMATIONS ===== */
