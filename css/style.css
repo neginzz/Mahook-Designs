@@ -551,7 +551,7 @@ article .hero-subtitle {
 
 .case-study .cs-section h2 {
   /* font-size: 2.5rem; */
-  font-size:  clamp(2rem, 6vw + 0.1rem, 2.5rem);
+  font-size: clamp(2rem, 6vw + 0.1rem, 2.5rem);
   font-weight: 900;
   line-height: 0.8;
   text-align: center;
@@ -584,7 +584,7 @@ article .hero-subtitle {
   display: grid;
 
   gap: 2rem 4rem;
-  grid-template-columns:repeat(auto-fit, minmax(min(24rem,100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
 }
 .case-study .cs-overview .overview-gp {
   grid-column: 1 / -1;
@@ -813,11 +813,6 @@ article .hero-subtitle {
   justify-content: center;
 }
 
-/* display none  */
-.case-study .final-design-section,
-.case-study .takeaways-section {
-  display: none;
-}
 .case-study .testing-section {
   width: min(75.25rem, 100%);
   margin-inline: auto;
@@ -856,8 +851,8 @@ article .hero-subtitle {
   align-content: center;
 }
 /* .testing-img-wrap .testing-txt h4 {
-  margin-bottom: 0.75rem;
-} */
+    margin-bottom: 0.75rem;
+  } */
 .testing-img-wrap .testing-txt ul {
   list-style: inside;
 }
@@ -865,9 +860,43 @@ article .hero-subtitle {
   max-height: 456px;
 }
 
-.case-study .final-design-img {
-  width: 240px;
+
+/* 18.Final Design   */
+.case-study .cs-final-design {
+  /* background-color: antiquewhite; */
+  width: min(74rem, 100%);
+  margin-inline: auto;
 }
+.case-study .cs-final-design .cs-subsection:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.case-study .cs-final-design .cs-subsection h3 {
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.cs-final-design .final-design-img {
+  max-width: 240px;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.cs-final-design .final-design-img-wrap {
+  display: grid;
+  gap: 2rem 1.3rem;
+  grid-template-columns: repeat(auto-fit, 17.5rem);
+  justify-content: center;
+}
+.case-study .cs-takeaways{
+  width: min(60rem, 100%);
+  margin-inline: auto;
+
+}
+.case-study .cs-takeaways strong{
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
 /* ======================================= END case study ================= */
 
 /* ===== FOOTER STYLES ===== */
@@ -1061,6 +1090,11 @@ footer .footer-bottom-container {
 
 @media (max-width: 500px) {
   .cs-ideation .wireframe-section .wireframe-img-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 630px) {
+  .cs-final-design .final-design-img-wrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
