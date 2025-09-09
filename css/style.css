@@ -190,7 +190,7 @@ a:hover {
 }
 
 /* ===== HEADER STYLES ===== */
-header.Page-level {
+header.page-level {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -482,8 +482,9 @@ main {
 /* case study general style */
 
 main.cs-page {
-  max-width: 80rem;
+  max-width: 90rem;
 }
+
 main article {
   display: grid;
   gap: 5rem;
@@ -499,18 +500,19 @@ main article {
   height: auto;
   display: block;
 }
+
+/* main article{
+  padding-inline: max(0, (100% - 1292px) / 2);
+} */
+
 /* .case-study .cs-subsection{
   animation: slideUp 0.8s linear;
   animation-timeline: view();
   animation-range: entry 0% cover 40%;
 } */
 
-/* HERO */
-/* main article{
-  padding-inline: max(0, (100% - 1292px) / 2);
-} */
+/* HERO casestudy (prj-goodreads.html) */
 article .cs-hero {
-  /* max-width: 1120px; */
   width: min(70rem, 100%);
   display: grid;
   gap: 5rem;
@@ -567,16 +569,17 @@ article .hero-subtitle {
   line-height: 1.5;
 }
 .case-study .cs-subsection .subsec-top-txt {
-  /* background-color: yellow; */
   width: min(60rem, 100%);
   margin-bottom: 1.5rem;
   margin-inline: auto;
 }
-/* INTRO */
-.case-study .cs-introduction {
+
+/* 1.introduction Section casestudy (prj-goodreads.html)*/
+.case-study .introduction--section {
   width: min(60rem, 100%);
 }
 
+/* 2.overview SUBSection casestudy /introduction (prj-goodreads.html)*/
 .case-study .cs-overview {
   display: grid;
 
@@ -587,10 +590,7 @@ article .hero-subtitle {
   grid-column: 1 / -1;
 }
 
-/* INTRO end... */
-
-/* problem discovery*/
-
+/* problem discovery SUBSection casestudy / introduction (prj-goodreads.html)*/
 .cs-problem-discovery .section-content {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -598,7 +598,6 @@ article .hero-subtitle {
   align-items: center;
 }
 .cs-problem-discovery .section-txt {
-  /* max-width:44.25rem; */
   display: grid;
   gap: 0.75rem;
 }
@@ -607,50 +606,48 @@ article .hero-subtitle {
   font-weight: 700;
   line-height: 1.5;
 }
-.cs-problem-discovery .section-img {
-  max-width: 15rem;
-  min-width: 11rem;
-}
-/* problem discovery*/
 
-/****** 5.RESEARCH ******/
+
+/***** 5.RESEARCH Section casestudy (prj-goodreads.html) *****/
 .case-study
-  .cs-research
-  .cs-subsection:not(.competitive-analysis-section):not(
-    .user-interviews-section
-  ):not(.personas-section) {
+  .research--section
+  .cs-subsection:not(.cs-competitive-analysis):not(
+    .cs-user-interviews
+  ):not(.cs-personas) {
   width: min(60rem, 100%);
-  /* background-color: cadetblue; */
   margin-inline: auto;
 }
 
-.user-comments-section img {
+/* 6.User Comments SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-user-comments img {
   width: min(51.5rem, 100%);
   margin-inline: auto;
 }
 
-.case-study .competitive-analysis-section img {
+/* 7.Competitive-Analysis SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.case-study .cs-competitive-analysis img {
   width: min(80.75rem, 100%);
   margin-inline: auto;
 }
-.user-interviews-section img {
+
+/* 8.user-interviews SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-user-interviews img {
   width: min(73.5rem, 100%);
   margin-inline: auto;
 }
-
-/* 10.key-insights-section */
-.key-insights-section ul {
+/* 10.key-insights SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-key-insights ul {
   padding-top: 0.75rem;
   list-style-type: none;
 }
-.key-insights-section ul > li:not(:last-child) {
+.cs-key-insights ul > li:not(:last-child) {
   margin-bottom: 0.75rem;
 }
-/* 11.Opportunity Areas & 15.Design Objectives */
+
+/* 11.Opportunity Areas & 15.Design Objectives SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
 
 .cs-subsection .opportunity-areas-cards-wrap,
 .cs-subsection .design-objectives-cards-wrap {
-  /* background-color: aquamarine; */
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -688,9 +685,8 @@ article .hero-subtitle {
   min-width: 12rem;
 }
 
-/* ***** 12.Personas Section */
-
-.personas-section .personas-cards-wrap {
+/* 12.Personas SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-personas .personas-cards-wrap {
   width: min(70rem, 100%);
   margin-inline: auto;
 
@@ -698,13 +694,13 @@ article .hero-subtitle {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
   gap: 1.5rem;
 }
-/*.personas-section .personas-cards-wrap {
+/*.cs-personas .personas-cards-wrap {
  background-color: rgb(248, 221, 236);
   display: flex;
   gap: 1.5rem; 
 
 }*/
-.personas-section .personas-cards-wrap .personas-card {
+.cs-personas .personas-cards-wrap .personas-card {
   background: hsla(0, 0%, 100%, 1);
   border-radius: 1rem;
   padding: 1.5rem;
@@ -717,7 +713,7 @@ article .hero-subtitle {
   gap: 1rem;
 }
 
-.personas-section .personas-card .personas-header {
+.cs-personas .personas-card .personas-header {
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
@@ -730,7 +726,7 @@ article .hero-subtitle {
   gap: 0.5rem;
 }
 
-.personas-section .personas-card .personas-img {
+.cs-personas .personas-card .personas-img {
   max-width: 8rem;
 }
 
@@ -763,24 +759,22 @@ article .hero-subtitle {
   font-weight: 700;
 }
 
-/* ***** end 12.Personas Section */
+/***** 13.IDEATION Section casestudy (prj-goodreads.html) *****/
 
-/****** 13.Ideation ******/
-.case-study .cs-ideation .cs-subsection:not(.testing-section) {
-  /* background-color: cadetblue; */
+.case-study .ideation--section .cs-subsection:not(.cs-testing) {
   width: min(60rem, 100%);
   margin-inline: auto;
 }
 
-/* ****** 14.brainstorming */
-.cs-ideation .brainstorming-img-wrap {
+/* 14.brainstorming SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.ideation--section .brainstorming-img-wrap {
   display: grid;
   grid-template-columns: 15rem auto;
   gap: 2rem;
   align-items: center;
   justify-items: center;
 }
-.brainstorming-section .brainstorming-q {
+.cs-brainstorming .brainstorming-q {
   background-color: var(--card-gradient2);
   font-size: 1.25rem;
   font-weight: 500;
@@ -792,16 +786,15 @@ article .hero-subtitle {
 .brainstorming-img-wrap .brainstorming-note {
   width: min(27rem, 100%);
 }
-.brainstorming-section .brainstorming-img-bottom {
+.cs-brainstorming .brainstorming-img-bottom {
   padding-top: 5rem;
 }
 
-/* 16.Wireframes & User Stories */
-
-.cs-ideation .wireframe-section p:not(:first-of-type) {
+/* 16.Wireframes & User Stories SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.ideation--section .cs-wireframe p:not(:first-of-type) {
   padding-top: 2.5rem;
 }
-.cs-ideation .wireframe-section .wireframe-img-wrap {
+.ideation--section .cs-wireframe .wireframe-img-wrap {
   padding-block: clamp(1.5rem, 3vw, 2.5rem);
   display: grid;
   grid-template-columns: repeat(auto-fit, 13.125rem);
@@ -810,21 +803,21 @@ article .hero-subtitle {
   justify-content: center;
 }
 
-.case-study .testing-section {
+/* 17.Testing SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.case-study .cs-testing {
   width: min(75.25rem, 100%);
   margin-inline: auto;
 }
-.testing-section .testing-row:not(.wide-row) {
+.cs-testing .testing-row:not(.wide-row) {
   width: min(60rem, 100%);
   margin-inline: auto;
 }
-.testing-section .testing-img-wrap {
+.cs-testing .testing-img-wrap {
   display: grid;
   gap: 3rem 5rem;
   margin-top: 2.5rem;
 }
 .testing-img-wrap .testing-row {
-  /* background-color: antiquewhite; */
   display: flex;
   gap: 2.5rem;
   justify-content: center;
@@ -857,31 +850,35 @@ article .hero-subtitle {
   max-height: 28.5rem;
 }
 
-/* 18.Final Design   */
-.case-study .cs-final-design {
-  /* background-color: antiquewhite; */
+/***** 18.FINAL DESIGN Section casestudy (prj-goodreads.html) *****/
+
+.case-study .final-design--section {
   width: min(74rem, 100%);
   margin-inline: auto;
 }
-.case-study .cs-final-design .cs-subsection:not(:last-child) {
+.case-study .final-design--section .cs-subsection:not(:last-child) {
   margin-bottom: 2.5rem;
 }
-.case-study .cs-final-design .cs-subsection h3 {
+.case-study .final-design--section .cs-subsection h3 {
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
   padding-top: 1.5rem;
 }
-.cs-final-design .final-design-img {
+.final-design--section .final-design-img {
   max-width: 15rem;
   margin-inline: auto;
   margin-bottom: 2.5rem;
 }
 
-.cs-final-design .final-design-img-wrap {
+.final-design--section .final-design-img-wrap {
   display: grid;
   gap: 2rem 1.3rem;
   grid-template-columns: repeat(auto-fit, 17.5rem);
   justify-content: center;
 }
+
+/***** 27.TAKEAWAYS Section casestudy (prj-goodreads.html) *****/
+
 .case-study .cs-takeaways {
   width: min(60rem, 100%);
   margin-inline: auto;
@@ -894,7 +891,7 @@ article .hero-subtitle {
 
 /* ======================================= END case study ================= */
 
-/* ===== FOOTER STYLES ===== */
+/* ===== FOOTER STYLES [start] ===== */
 footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
@@ -952,8 +949,11 @@ footer .footer-bottom-container {
   font-size: 0.875rem;
   color: var(--copyright-text);
 }
+/* ===== FOOTER STYLES [end] ===== */
 
-/* ===== ABOUT PAGE STYLES ===== */
+
+
+/* ============================== ABOUT PAGE STYLES [start] (about.html) ===== */
 
 /* Main grid layout for about page */
 .about-page-grid {
@@ -1064,7 +1064,7 @@ footer .footer-bottom-container {
   font-size: 0.875rem;
 }
 
-/* ======================== RESPONSIVE STYLES ===== */
+/* ========================================= RESPONSIVE STYLES ===== */
 
 /* About page responsive styles */
 @media (max-width: 1024px) {
@@ -1084,12 +1084,12 @@ footer .footer-bottom-container {
 }
 
 @media (max-width: 500px) {
-  .cs-ideation .wireframe-section .wireframe-img-wrap {
+  .ideation--section .cs-wireframe .wireframe-img-wrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (max-width: 630px) {
-  .cs-final-design .final-design-img-wrap {
+  .final-design--section .final-design-img-wrap {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -1112,7 +1112,7 @@ footer .footer-bottom-container {
       "contact";
     gap: 2rem;
   }
-  .cs-ideation .brainstorming-img-wrap {
+  .ideation--section .brainstorming-img-wrap {
     grid-template-columns: 1fr;
   }
 }
@@ -1120,7 +1120,7 @@ footer .footer-bottom-container {
 /* Mobile styles - applies to case study pages */
 @media (max-width: 760px) {
 
-  /* goodgreads case study */
+  /* goodreads case study */
 
   /* gpt help start */
   .case-study .screen-img-wrap {
@@ -1144,7 +1144,7 @@ footer .footer-bottom-container {
 }
 
 /* @media(max-width:490px){
-  .cs-ideation .wireframe-section .wireframe-img-wrap{
+  .ideation--section .cs-wireframe .wireframe-img-wrap{
     grid-template-columns: repeat(auto-fit,180px);
 }
 } */
