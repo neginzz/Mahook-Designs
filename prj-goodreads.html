@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="UX case study improving Goodreads iOS: research, ideation, testing, and final design."
+    />
     <title>Mahook Designs</title>
     <link rel="stylesheet" href="css/style.css" />
     <link
@@ -17,39 +21,887 @@
       rel="stylesheet"
     /> -->
   </head>
-  <body>
-    <div class="container home-page">
-      <header>
-        <a href="index.html">
+  <body class="goodreads-page">
+    <!-- cs- Header -->
+    <header class="page-level">
+      <a href="index.html">
+        <img
+          src="assets/images/Logo.svg"
+          alt="moon logo"
+          class="moon-icon"
+          width="44"
+          height="44"
+        />
+      </a>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="resume.pdf" download class="resume-btn"
+          >Resume
           <img
-            src="assets/images/Logo.svg"
-            alt="moon logo"
-            class="moon-icon"
-            width="44"
-            height="44"
+            src="assets/images/download-icon-3.svg"
+            alt="download icon"
+            class="dl-icon"
+            width="16"
+            height="16"
           />
         </a>
-        <nav>
-          <a href="about.html">About</a>
-          <a href="resume.pdf" download class="resume-btn"
-            >Resume
+      </nav>
+    </header>
+
+    <!-- cs- Main -->
+    <main class="cs-page">
+      <!-- cs- Article -->
+      <article
+        class="case-study"
+        itemscope
+        itemtype="https://schema.org/Article"
+      >
+        <!-- Article - Hero Header -->
+        <header class="Article-level cs-hero animate fade-in">
+          <div class="hero-txt">
+            <h1 class="hero-title" itemprop="headline">
+              Fixing the Gaps in Goodreads: Designing for Reflection, Discovery,
+              and Connection
+            </h1>
+            <p class="hero-subtitle" itemprop="about">
+              UX Design Case Study for iOS mobile app
+            </p>
+          </div>
+          <figure class="screen-img-wrap animate slide-up">
             <img
-              src="assets/images/download-icon-3.svg"
-              alt="download icon"
-              class="dl-icon"
-              width="16"
-              height="16"
+              src="assets/images/case-studies/goodreads/hero-iPhone-Mockup-1.png"
+              alt=""
             />
-          </a>
-        </nav>
-      </header>
+            <img
+              src="assets/images/case-studies/goodreads/hero-iPhone-Mockup-2.png"
+              alt=""
+            />
+            <img
+              src="assets/images/case-studies/goodreads/hero-iPhone-Mockup-3.png"
+              alt=""
+            />
+            <img
+              src="assets/images/case-studies/goodreads/hero-iPhone-Mockup-4.png"
+              alt=""
+            />
+          </figure>
+        </header>
 
-      <main>
-        <section><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum enim sit exercitationem, in similique, quas consequuntur reprehenderit dolore quod voluptate placeat illum delectus dignissimos, ipsum voluptas voluptates. Eveniet, suscipit.</p></section>
-      </main>
+        <!-- 1. INTRODUCTION / Section H2-->
+        <section class="cs-section introduction--section" aria-labelledby="intro">
+          <h2 id="intro">Introduction</h2>
 
-      <footer>
-        <div class="footer-container">
+          <!-- 2. cs-overview SUBsection / introduction -->
+          <section class="cs-subsection cs-overview">
+            <div class="overview-gp">
+              <h3>Overview</h3>
+              <p>
+                This project focuses on improving the user experience of
+                <strong>Goodreads</strong>. I worked individually, with a
+                <strong>research-driven</strong> approach to identify and
+                address key user pain points. The goal was to turn
+                <strong>user feedback</strong> into practical design
+                improvements that would make the iOS mobile app better for
+                readers.
+              </p>
+            </div>
+
+            <div class="role-gp">
+              <h3>My Role:</h3>
+              <p>
+                This was a solo project completed over the course of five weeks.
+                I was responsible for the end-to-end design process — from
+                defining the problem space to delivering tested solutions.
+              </p>
+              <p>
+                My work included user research, competitive analysis, user
+                interviews, surveys, synthesizing insights, mapping user flows,
+                ideation, wireframing, designing high-fidelity prototypes, and
+                conducting usability testing and A/B testing.
+              </p>
+            </div>
+            <div class="tools-gp">
+              <h3>Tools:</h3>
+              <p>Figma, FigJam, Untitled UI Design System, Typeform</p>
+            </div>
+          </section>
+
+          <!-- 3. cs-timeline SUBsection / introduction -->
+          <section class="cs-subsection cs-timeline">
+            <h3>Timeline</h3>
+            <img src="assets/images/case-studies/goodreads/timeline-table.png" alt="timeline table" />
+          </section>
+          
+          <!-- 4. cs-problem-discovery SUBsection / introduction -->
+          <section class="cs-subsection cs-problem-discovery">
+            <h3>Problem Discovery</h3>
+
+            <div class="section-content">
+              <div class="section-txt">
+                <strong>
+                  As we move forward in a hyper-connected world, people are
+                  craving more intentional social spaces.
+                </strong>
+                <p>
+                  People don’t just want another social feed—they want a focused
+                  space to track their reading and connect with like-minded
+                  readers. Existing tools like Goodreads try, but often feel
+                  outdated or clunky. What’s missing is a modern, intentional
+                  experience that makes it easy and enjoyable to stay organized,
+                  inspired, and connected.
+                </p>
+                <strong>
+                  How might we design a more thoughtful and inspiring space
+                  where readers can reflect on their progress and build
+                  connections around books?
+                </strong>
+              </div>
+              <div class="section-img">
+                <img
+                  src="assets/images/case-studies/goodreads/Problem-Discovery-illustration.png"
+                  alt="boy thinking"
+                />
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- 5. RESEARCH / Section H2-->
+        <section class="cs-section research--section" aria-labelledby="research">
+          <h2 id="research">Research</h2>
+
+          <!-- 6. cs-user-comments SUBsection / introduction -->
+          <section class="cs-subsection cs-user-comments">
+            <div class="subsec-top-txt">
+              <h3>User Comments</h3>
+              <p>
+                I gathered user comments from app stores and review sites to
+                spot common issues. Here are the key problems that stood out:
+              </p>
+            </div>
+            <img
+              src="assets/images/case-studies/goodreads/user-comments.png"
+              alt="user comments"
+            />
+          </section>
+          
+          <!-- 7. cs-competitive-analysis SUBsection / introduction -->
+          <section class="cs-subsection cs-competitive-analysis">
+            <div class="subsec-top-txt">
+              <h3>Competitive Analysis</h3>
+              <p>
+                I analyzed The StoryGraph, LibraryThing, and Notion compared
+                them to Goodreads to see how they handle similar features. Here
+                are the key insights from that comparison.
+              </p>
+            </div>
+            <!-- <div class="competitive-analysis-img-wrap"> -->
+            <img
+              src="assets/images/case-studies/goodreads/competitive-analysis-table.png"
+              alt="competitive analysis table"
+            />
+            <!-- </div> -->
+          </section>
+
+          <!-- 8. cs-user-interviews SUBsection / introduction -->
+          <section class="cs-subsection cs-user-interviews">
+            <div class="subsec-top-txt">
+              <h3>User Interviews</h3>
+              <p>
+                I <strong>Interviewed</strong> over 15 users from diverse
+                backgrounds. They shared their reading habits then their pain
+                points, and what motivates or frustrates them while using the
+                app.
+              </p>
+            </div>
+            <!-- <div class="user-interviews-img-wrap"> -->
+            <img
+              src="assets/images/case-studies/goodreads/User-Interviews.png"
+              alt="User Interviews meet"
+            />
+            <!-- </div> -->
+          </section>
+
+          <!-- 9. cs-survey SUBsection / introduction -->
+          <section class="cs-subsection cs-survey">
+            <div class="subsec-top-txt">
+              <h3>Survey</h3>
+              <p>
+                I ran a <strong>Survey</strong> with around 50 participants to
+                gather early insights. The results gave me a clear direction
+              </p>
+            </div>
+            <div class="survey-section-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Survey.png"
+                alt="Survey charts"
+                width="960"
+                height="807"
+              />
+            </div>
+          </section>
+          
+          <!-- 10. cs-key-insights SUBsection / introduction -->
+          <section class="cs-subsection cs-key-insights">
+            <h3>Key Insights &amp; Pain Points</h3>
+            <ul>
+              <li>
+                📌 Users treat Goodreads more as a log than a social space — 85%
+                primarily track their reading.
+              </li>
+              <li>
+                📌 Discovery is broken — users find it irrelevant, mainstream,
+                and impersonal.
+              </li>
+              <li>
+                📌 Social features are underused due to poor design, lack of
+                messaging, and confusing mechanics.
+              </li>
+              <li>
+                📌 Mobile app lags behind web — users prefer desktop for core
+                tasks like filtering or organizing.
+              </li>
+              <li>
+                📌 Clear need for segmentation — casual readers and power users
+                are poorly served by a one-size-fits-all UX.
+              </li>
+            </ul>
+          </section>
+
+          <!-- 11. cs-opportunity-areas SUBsection / introduction -->
+          <section class="cs-subsection cs-opportunity-areas">
+            <h3>Opportunity Areas</h3>
+            <div class="opportunity-areas-cards-wrap">
+              <div class="opportunity-areas-card">
+                <img
+                  src="assets/images/case-studies/goodreads/opportunity-areas-1.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Personalized Discovery &amp; Book Management</h4>
+                </div>
+              </div>
+              <div class="opportunity-areas-card">
+                <img
+                  src="assets/images/case-studies/goodreads/opportunity-areas-2.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Modern Social Features</h4>
+                </div>
+              </div>
+              <div class="opportunity-areas-card">
+                <img
+                  src="assets/images/case-studies/goodreads/opportunity-areas-3.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Mobile-first Redesign</h4>
+                </div>
+              </div>
+            </div>
+          </section>
+
+           <!-- 12. cs-personas SUBsection / introduction -->
+          <section class="cs-subsection cs-personas">
+            <div class="subsec-top-txt">
+              <h3>Personas</h3>
+              <p>
+                Synthesizing research insights and pain points into 2 key
+                personas.
+              </p>
+            </div>
+            <div class="personas-cards-wrap">
+              <div class="personas-card">
+                <div class="personas-header">
+                  <img
+                    src="assets/images/case-studies/goodreads/personas-1.png"
+                    alt="profile pic"
+                    class="personas-img"
+                  />
+                  <div class="personas-header-txt">
+                    <p class="personas-name">Curious <span>Ellie</span></p>
+                    <p class="personas-info">24, University student</p>
+                  </div>
+                </div>
+                <p class="personas-description">
+                  Wants quick and relevant book
+                  <strong>recommendations</strong>, organized reading lists, and
+                  an easy way to <strong>track her progress</strong>. Needs a
+                  smoother way to manage books and discover new reads without
+                  wasting time.
+                </p>
+              </div>
+              <div class="personas-card">
+                <div class="personas-header">
+                  <img
+                    src="assets/images/case-studies/goodreads/personas-2.png"
+                    alt="profile pic"
+                    class="personas-img"
+                  />
+                  <div class="personas-header-txt">
+                    <p class="personas-name">Social <span>Leo</span></p>
+                    <p class="personas-info">28, early-career editor</p>
+                  </div>
+                </div>
+                <p class="personas-description">
+                  Wants a vibrant book-loving <strong>community</strong>. Looks
+                  for ways to see friends’ reading activity, write and read
+                  thoughtful reviews, and interact meaningfully with others who
+                  share his tastes.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+
+        <!-- 13. IDEATION / Section H2-->
+        <section class="cs-section ideation--section" aria-labelledby="ideation">
+          <h2 id="ideation">Ideation</h2>
+
+          <!-- 14. cs-brainstorming SUBsection / Ideation -->
+          <section class="cs-subsection cs-brainstorming">
+            <div class="subsec-top-txt">
+              <h3>How Might We?</h3>
+              <p>
+                I ran several <strong>Brainstorming</strong> and
+                <strong>Crazy Eights</strong> sessions to explore ideas based on
+                pain points, goals, and key requirements. From there, I gathered
+                and refined the best concepts.
+              </p>
+            </div>
+            <div class="brainstorming-img-wrap">
+              <div class="brainstorming-q">
+                <p>
+                  How can we help people discover and manage books in a way that
+                  feels smarter and more personal?
+                </p>
+              </div>
+              <img
+                src="assets/images/case-studies/goodreads/note-1.png"
+                alt="sticky note"
+                class="brainstorming-note"
+              />
+              <div class="brainstorming-q">
+                <p>
+                  How can we make social interactions around reading feel more
+                  meaningful and engaging?
+                </p>
+              </div>
+              <img
+                src="assets/images/case-studies/goodreads/note-2.png"
+                alt="sticky note"
+                class="brainstorming-note"
+              />
+              <div class="brainstorming-q">
+                <p>
+                  How can we design a mobile experience that’s both intuitive
+                  and genuinely enjoyable to use?
+                </p>
+              </div>
+              <img
+                src="assets/images/case-studies/goodreads/note-3.png"
+                alt="sticky note"
+                class="brainstorming-note"
+              />
+            </div>
+            <img
+              src="assets/images/case-studies/goodreads/brainstorming.png"
+              alt=""
+              class="brainstorming-img-bottom"
+            />
+          </section>
+
+          <!-- 15. cs-design-objectives SUBsection / Ideation -->
+          <section class="cs-subsection cs-design-objectives">
+            <h3>Design Objectives</h3>
+            <div class="design-objectives-cards-wrap">
+              <div class="design-objectives-card">
+                <img
+                  src="assets/images/case-studies/goodreads/design-objectives-1.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Clarity over clutter</h4>
+                  <p>
+                    Every screen should feel clean, focused, and easy to scan
+                  </p>
+                </div>
+              </div>
+              <div class="design-objectives-card">
+                <img
+                  src="assets/images/case-studies/goodreads/design-objectives-2.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Consistent navigation</h4>
+                  <p>
+                    Key actions and sections are always easy to find and use.
+                  </p>
+                </div>
+              </div>
+              <div class="design-objectives-card">
+                <img
+                  src="assets/images/case-studies/goodreads/design-objectives-3.png"
+                  alt="Survey charts"
+                />
+                <div class="cs-card-txt">
+                  <h4>Emotionally</h4>
+                  <p>
+                    Design that feels warm, human, and connected to the joy of
+                    reading.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- 16. cs-wireframe SUBsection / Ideation -->
+          <section class="cs-subsection cs-wireframe">
+            <h3>Wireframes &amp; User Stories</h3>
+            <p>
+              As a casual reader, I want a simple way to log what I’ve read, so
+              I can remember and reflect on it.
+            </p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-1-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-1-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-1-3.png"
+                alt=""
+              />
+            </figure>
+            <p>
+              As a power user, I want customizable shelves and reading stats, so
+              I can analyze my reading habits.
+            </p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-2-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-2-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-2-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-2-4.png"
+                alt=""
+              />
+            </figure>
+            <p>
+              As a curious reader, I want personalized and diverse
+              recommendations, so I can discover books outside the mainstream.
+            </p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-3-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-3-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-3-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-3-4.png"
+                alt=""
+              />
+            </figure>
+            <p>
+              As a social reader, I want to see what my friends are reading and
+              comment on their reviews, so I can feel part of a reading
+              community.
+            </p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-4-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-4-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-4-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-4-4.png"
+                alt=""
+              />
+            </figure>
+            <p>
+              As a curious reader, I want to filter user reviews on books and
+              get a summary of the to decide what to read.
+            </p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-5-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-5-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-5-3.png"
+                alt=""
+              />
+            </figure>
+            <p>As a focused reader, I want to control what I see in my feed.</p>
+            <figure class="wireframe-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-6-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Wireframe-6-2.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 17. cs-testing SUBsection / Ideation -->
+          <section class="cs-subsection cs-testing">
+            <div class="subsec-top-txt">
+              <h3>Usability Testing &amp; A/B Testing</h3>
+              <p>
+                I conducted online moderated
+                <strong>Usability Tests</strong> and
+                <strong>A/B Tests</strong> where participants interacted with
+                different flows. I observed their difficulties, gathered
+                feedback, and made improvements based on the findings.
+              </p>
+            </div>
+            <div class="testing-img-wrap">
+              <div class="testing-row">
+                <div class="testing-txt">
+                  <h4>“Add Book” Button Placement</h4>
+                  <p>
+                    Originally placed as a floating action button on the
+                    homepage, users found it inconsistent and
+                    confusing—especially since it didn’t appear on other
+                    screens. To solve this, I moved the action to the bottom
+                    navigation bar, making it always accessible, no matter where
+                    users are in the app.
+                  </p>
+                </div>
+                <img
+                  src="assets/images/case-studies/goodreads/testing-1.png"
+                  alt="sticky note"
+                  class="testing-img"
+                />
+              </div>
+              <div class="testing-row">
+                <img
+                  src="assets/images/case-studies/goodreads/testing-2.png"
+                  alt="sticky note"
+                  class="testing-img"
+                />
+                <div class="testing-txt">
+                  <h4>Notifications &amp; Messages Separation</h4>
+                  <p>
+                    Both notifications and messages were grouped in one space
+                    using tabs, but users expressed the need for clearer
+                    separation. I split them into two distinct sections and
+                    added dedicated icons on the homepage for quicker access and
+                    better clarity.
+                  </p>
+                </div>
+              </div>
+              <div class="testing-row wide-row">
+                <div class="testing-txt">
+                  <h4>Review &amp; Rating Flow</h4>
+                  <p>
+                    Initially, users had to write a review on the same page
+                    where they rated and added a book. Many found this limiting
+                    and preferred more flexibility. I addressed this by creating
+                    a dedicated review page with richer tools and more control.
+                  </p>
+                </div>
+                <img
+                  src="assets/images/case-studies/goodreads/testing-3.png"
+                  alt="sticky note"
+                  class="testing-img"
+                />
+              </div>
+              <div class="testing-row">
+                <img
+                  src="assets/images/case-studies/goodreads/testing-4.png"
+                  alt="sticky note"
+                  class="testing-img"
+                />
+                <div class="testing-txt">
+                  <h4>Book Management Section Simplification</h4>
+                  <ul>
+                    <li>
+                      The book management screen included two top
+                      buttons—“Stats” and “Add Book.” Since the "Add Book"
+                      function was already available in the main navigation,
+                      users found it redundant. I removed the extra button to
+                      reduce clutter and improve focus.
+                    </li>
+                    <li>
+                      Sections like “Currently Reading” and the “Reading
+                      Challenge” were taking up too much space, making book
+                      management feel overwhelming. Users wanted a more compact
+                      view, so I reduced their size to improve usability and
+                      allow more focus on book lists.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+
+
+        <!-- 18. FINAL DESIGN / Section H2-->
+        <section class="cs-section final-design--section" aria-labelledby="final-design" >
+          <h2 id="final-design">Final Design</h2>
+          <img
+            class="final-design-img"
+            src="assets/images/case-studies/goodreads/final-design.png"
+            alt=""
+          />
+
+          <!-- 19.Onboarding & Profie Setup SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Onboarding &amp; Profie Setup</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-1-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-1-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-1-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-1-4.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-2-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-2-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-2-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/Onboarding-2-4.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 20.Home SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Home</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/home-1-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/home-1-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/home-1-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/home-1-4.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/home-2-1.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 21.Notifications & Messaging  SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Notifications &amp; Messaging</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/notif-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/notif-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/notif-3.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 22.Books SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Books</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/books-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/books-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/books-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/books-4.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 23.Add Book SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Add Book</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/addbook-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/addbook-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/addbook-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/addbook-4.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 24.Search & Explore SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Search &amp; Explore</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/search-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/search-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/search-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/search-4.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 25.Profile & Settings SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Profile &amp; Settings</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/profilesettings-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/profilesettings-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/profilesettings-3.png"
+                alt=""
+              />
+            </figure>
+          </section>
+
+          <!-- 26.Profile Types SUBsection / Final Design -->
+          <section class="cs-subsection">
+            <h3>Profile Types</h3>
+            <figure class="final-design-img-wrap">
+              <img
+                src="assets/images/case-studies/goodreads/profiletype-1.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/profiletype-2.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/profiletype-3.png"
+                alt=""
+              />
+              <img
+                src="assets/images/case-studies/goodreads/profiletype-4.png"
+                alt=""
+              />
+            </figure>
+          </section>
+        </section>
+
+
+        <!-- 27. TAKEAWAYS / Section H2-->
+        <section class="cs-section cs-takeaways">
+          <h2>Takeaways</h2>
+          <strong>Real insights don’t come from assumptions.</strong>
+          <p>
+            I began this project thinking the solution would be mostly visual.
+            But through user interviews, surveys, and real feedback, it became
+            clear: the real challenges were structural, not just aesthetic. This
+            process reminded me how valuable research truly is. Observing how
+            people interact with a product—and listening closely—revealed
+            insights I wouldn’t have uncovered on my own. It also deepened my
+            interest in data and how it can support thoughtful design decisions.
+            Most importantly, I learned the value of involving users early and
+            often. Their input helped me design with more clarity, confidence,
+            and empathy—skills I’ll continue carrying into every project ahead.
+          </p>
+        </section>
+
+      </article>
+
+    </main>
+
+    <!-- cs- Footer -->
+    <footer>
+      <div class="footer-container">
         <div class="footer-links">
           <a href="mailto:email@example.com">Email</a>
           <a
@@ -82,7 +934,6 @@
           </div>
         </div>
       </div>
-      </footer>
-    </div>
+    </footer>
   </body>
 </html>

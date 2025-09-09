@@ -5,6 +5,7 @@
   --muted: hsla(215, 23%, 27%, 1); /* #344054 */
   --muted-light: hsla(216, 18%, 34%, 1); /* #475467 */
   --foreground: hsla(217, 24%, 27%, 1);
+  --foreground-headline: hsla(220, 43%, 11%, 1); /* #344054 */
   --primary: hsla(221, 89%, 55%, 1); /* #155eef */
   --primary-hover: hsla(221, 89%, 40%, 1); /* #0b45c1 */
 
@@ -97,46 +98,46 @@
 *
 */
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Light.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Light.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Light.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Light.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Light.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Light.ttf") format("truetype");
   font-weight: 300;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Regular.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Regular.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Regular.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Regular.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Medium.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Medium.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Medium.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Medium.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Bold.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Bold.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Bold.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Bold.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Black.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Black.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Black.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Black.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Black.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Black.ttf") format("truetype");
   font-weight: 900;
   font-display: swap;
   font-style: normal;
@@ -150,23 +151,22 @@
 'wght' (range from 300.0 to 900.0
 */
 @font-face {
-  font-family: 'Satoshi';
-  src: url('../assets/fonts/Satoshi-Variable.woff2') format('woff2'),
-       url('../assets/fonts/Satoshi-Variable.woff') format('woff'),
-       url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-family: "Satoshi";
+  src: url("../assets/fonts/Satoshi-Variable.woff2") format("woff2"),
+    url("../assets/fonts/Satoshi-Variable.woff") format("woff"),
+    url("../assets/fonts/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
   font-style: normal;
 }
-
-
-
 
 /* ===== RESET & BASE STYLES ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* add border around eveything */
+  outline: 1px dashed rgba(255, 0, 0, 0.2);
 }
 
 body {
@@ -177,12 +177,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 a {
@@ -196,7 +190,7 @@ a:hover {
 }
 
 /* ===== HEADER STYLES ===== */
-header {
+header.page-level {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -208,6 +202,7 @@ header {
 
 .moon-icon {
   transition: transform 0.5s ease;
+  display: block;
 }
 
 .moon-icon:hover {
@@ -256,12 +251,15 @@ nav a.active {
 main {
   flex: 1;
   padding: 1rem 1.5rem 3rem;
-  max-width: 1200px;
+  max-width: 75rem;
   margin: 0 auto;
   width: 100%;
 }
 
-/* ===== HOME PAGE STYLES ===== */
+/* ============================== HOME PAGE STYLES [start] (index.html) ===== */
+
+/* Hero for index.html */
+
 .hero {
   margin-bottom: 7rem;
 }
@@ -277,31 +275,32 @@ main {
   color: var(--primary);
 }
 .black {
-  color: hsla(220, 43%, 11%, 1);
+  color: var(--foreground-headline);
 }
 
-.tagline {
+.hero .tagline {
   font-size: 2.25rem;
   font-weight: 500;
   line-height: 1.5;
   color: var(--muted);
   margin-bottom: 4rem;
-  max-width: 800px;
+  max-width: 50rem; /* 800px */
 }
 
-/* ===== SOCIAL LINKS & TOOLTIPS ===== */
+/* SOCIAL LINKS & TOOLTIPS (index & about) */
+
 .social-links {
   display: flex;
-  gap: 24px;
+  gap: 1.5rem;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  border-radius: 12px;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.75rem;
   box-shadow: 0px 1px 2px 0px hsla(220, 26%, 11%, 0.05); /* #1018280d → hsla */
   transition: background-color 0.3s ease, border-color 0.3s ease;
   position: relative;
@@ -328,7 +327,7 @@ main {
   background-color: var(--dribbble-bg-hover);
 }
 
-/* Tooltip styles */
+/* Tooltip styles (index & about)*/
 .tooltip {
   position: relative;
 }
@@ -351,7 +350,7 @@ main {
   z-index: 10;
 }
 
-/* Special positioning for email tooltip to prevent overflow */
+/* Special positioning for email tooltip to prevent overflow (index & about)*/
 .email-icon.tooltip::after {
   left: 0;
   transform: translateX(0);
@@ -363,7 +362,7 @@ main {
   top: -45px;
 }
 
-/* ===== PROJECT CARDS ===== */
+/* ===== PROJECT CARDS (index) ===== */
 .project-card-wrapper {
   will-change: transform, opacity;
 }
@@ -374,7 +373,7 @@ main {
 }
 
 .project-card {
-  height: 240px;
+  height: 15rem;  /*240px */
   border-radius: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease;
@@ -385,28 +384,33 @@ main {
   transform: scale(1.02);
 }
 
-/*************** NEW **************/
-
-/** Added cover card styles  **/
+/** Added cover card styles  (index)**/
 .project-card.cover-card {
-  background: radial-gradient(50% 50% at 50% 50%, var(--card-gradient1) 0%, var(--card-gradient2) 100%);
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--card-gradient1) 0%,
+    var(--card-gradient2) 100%
+  );
   border: 1px solid var(--border);
   display: flex;
   padding: 2rem;
-  gap: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap-reverse;
   align-items: center;
+  height: fit-content;
 }
 
 .cover-content {
-  flex: 1;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.75rem;
+  flex-basis: 32.5rem;
 }
 
 .cover-title {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 2rem;
+  font-weight: 500;
   line-height: 1.3;
   color: var(--foreground);
   margin: 0;
@@ -414,11 +418,11 @@ main {
 
 .cover-title .highlight-blue {
   color: var(--primary);
-  font-weight: 900;
+  font-weight: 800;
 }
 
 .cover-subtitle {
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: var(--muted-light);
   margin: 0;
   line-height: 1.4;
@@ -426,12 +430,12 @@ main {
 
 .cover-link {
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 1rem;
   text-decoration: none;
   transition: color 0.3s ease;
   transition: padding-left 0.3s ease;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   position: relative;
 }
 
@@ -449,9 +453,7 @@ main {
 }
 
 .cover-image {
-  flex-shrink: 0;
-  width: 200px;
-  height: 200px;
+  width: min(13rem,100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -459,10 +461,9 @@ main {
 
 .cover-image img {
   max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
 }
-/*************** END NEW **************/
+/** [ended] cover card styles  (index)**/
+
 
 .project-card.dark {
   background-color: var(--card1);
@@ -476,7 +477,421 @@ main {
   background-color: var(--card3);
 }
 
-/* ===== FOOTER STYLES ===== */
+/* ============================== CASE STUDY STYLES [start] (prj-goodreads.html) ===== */
+
+/* case study general style */
+
+main.cs-page {
+  max-width: 90rem;
+}
+
+main article {
+  display: grid;
+  gap: 5rem;
+  justify-items: center;
+}
+.case-study .cs-subsection:not(:last-child) {
+  /* display: grid;
+  gap: 5rem; */
+  margin-bottom: 5rem;
+}
+.case-study img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* main article{
+  padding-inline: max(0, (100% - 1292px) / 2);
+} */
+
+/* .case-study .cs-subsection{
+  animation: slideUp 0.8s linear;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+} */
+
+/* HERO casestudy (prj-goodreads.html) */
+article .cs-hero {
+  width: min(70rem, 100%);
+  display: grid;
+  gap: 5rem;
+  padding-top: 3rem;
+}
+.cs-hero .hero-title {
+  color: var(--foreground-headline);
+  font-size: clamp(2rem, 3.5vw + 0.5rem, 3rem);
+  line-height: 1.3;
+  font-weight: 900;
+}
+article .hero-subtitle {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: var(--muted-light);
+  margin-top: 0.7rem;
+}
+.case-study .screen-img-wrap {
+  /* display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap; */
+
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+}
+.case-study .screen-img-wrap img {
+  width: 100%;
+  max-width: 15rem; /* keep your 4-col “card” size */
+  justify-self: center; /* center when the cell is wider than 15rem */
+}
+
+.case-study .cs-section h2 {
+  /* font-size: 2.5rem; */
+  color: var(--foreground-headline);
+  font-size: clamp(2rem, 6vw + 0.1rem, 2.5rem);
+  font-weight: 900;
+  line-height: 0.8;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.case-study .cs-subsection h3 {
+  color: var(--primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+}
+.case-study .cs-subsection h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.5;
+}
+.case-study .cs-subsection .subsec-top-txt {
+  width: min(60rem, 100%);
+  margin-bottom: 1.5rem;
+  margin-inline: auto;
+}
+
+/* 1.introduction Section casestudy (prj-goodreads.html)*/
+.case-study .introduction--section {
+  width: min(60rem, 100%);
+}
+
+/* 2.overview SUBSection casestudy /introduction (prj-goodreads.html)*/
+.case-study .cs-overview {
+  display: grid;
+
+  gap: 2rem 4rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+}
+.case-study .cs-overview .overview-gp {
+  grid-column: 1 / -1;
+}
+
+/* problem discovery SUBSection casestudy / introduction (prj-goodreads.html)*/
+.cs-problem-discovery .section-content {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+.cs-problem-discovery .section-txt {
+  display: grid;
+  gap: 0.75rem;
+}
+.cs-problem-discovery .section-txt strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+
+/***** 5.RESEARCH Section casestudy (prj-goodreads.html) *****/
+.case-study
+  .research--section
+  .cs-subsection:not(.cs-competitive-analysis):not(
+    .cs-user-interviews
+  ):not(.cs-personas) {
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+
+/* 6.User Comments SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-user-comments img {
+  width: min(51.5rem, 100%);
+  margin-inline: auto;
+}
+
+/* 7.Competitive-Analysis SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.case-study .cs-competitive-analysis img {
+  width: min(80.75rem, 100%);
+  margin-inline: auto;
+}
+
+/* 8.user-interviews SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-user-interviews img {
+  width: min(73.5rem, 100%);
+  margin-inline: auto;
+}
+/* 10.key-insights SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-key-insights ul {
+  padding-top: 0.75rem;
+  list-style-type: none;
+}
+.cs-key-insights ul > li:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+/* 11.Opportunity Areas & 15.Design Objectives SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+
+.cs-subsection .opportunity-areas-cards-wrap,
+.cs-subsection .design-objectives-cards-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+}
+.cs-subsection .opportunity-areas-card,
+.cs-subsection .design-objectives-card {
+  /* background-color: cadetblue; */
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--card-gradient1) 0%,
+    var(--card-gradient2) 100%
+  );
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  align-items: start;
+  flex: 1;
+}
+.cs-subsection .opportunity-areas-card img,
+.cs-subsection .design-objectives-card img {
+  max-width: 10rem;
+}
+.cs-subsection .opportunity-areas-card .cs-card-txt,
+.cs-subsection .design-objectives-card .cs-card-txt {
+  display: grid;
+  gap: 0.75rem;
+  width: min(16rem, 100%);
+  text-align: center;
+  min-width: 12rem;
+}
+
+/* 12.Personas SUBSection casestudy / RESEARCH (prj-goodreads.html)*/
+.cs-personas .personas-cards-wrap {
+  width: min(70rem, 100%);
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 30rem), 1fr));
+  gap: 1.5rem;
+}
+/*.cs-personas .personas-cards-wrap {
+ background-color: rgb(248, 221, 236);
+  display: flex;
+  gap: 1.5rem; 
+
+}*/
+.cs-personas .personas-cards-wrap .personas-card {
+  background: hsla(0, 0%, 100%, 1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid hsla(220, 17%, 93%, 1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.cs-personas .personas-card .personas-header {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.personas-header .personas-header-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.cs-personas .personas-card .personas-img {
+  max-width: 8rem;
+}
+
+.personas-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.personas-name span {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+.personas-info {
+  font-size: 0.875rem;
+  color: var(--muted-light);
+  font-weight: 500;
+}
+
+.personas-description {
+  /* font-size: clamp(1.25rem, 2.2vw, 1rem);
+  line-height: clamp(1.5, 2.2vw, 1.4); */
+  font-size: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+.personas-description strong {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+/***** 13.IDEATION Section casestudy (prj-goodreads.html) *****/
+
+.case-study .ideation--section .cs-subsection:not(.cs-testing) {
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+
+/* 14.brainstorming SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.ideation--section .brainstorming-img-wrap {
+  display: grid;
+  grid-template-columns: 15rem auto;
+  gap: 2rem;
+  align-items: center;
+  justify-items: center;
+}
+.cs-brainstorming .brainstorming-q {
+  background-color: var(--card-gradient2);
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+}
+
+.brainstorming-img-wrap .brainstorming-note {
+  width: min(27rem, 100%);
+}
+.cs-brainstorming .brainstorming-img-bottom {
+  padding-top: 5rem;
+}
+
+/* 16.Wireframes & User Stories SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.ideation--section .cs-wireframe p:not(:first-of-type) {
+  padding-top: 2.5rem;
+}
+.ideation--section .cs-wireframe .wireframe-img-wrap {
+  padding-block: clamp(1.5rem, 3vw, 2.5rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 13.125rem);
+
+  gap: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+  justify-content: center;
+}
+
+/* 17.Testing SUBSection casestudy / IDEATION (prj-goodreads.html) */
+.case-study .cs-testing {
+  width: min(75.25rem, 100%);
+  margin-inline: auto;
+}
+.cs-testing .testing-row:not(.wide-row) {
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+.cs-testing .testing-img-wrap {
+  display: grid;
+  gap: 3rem 5rem;
+  margin-top: 2.5rem;
+}
+.testing-img-wrap .testing-row {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.testing-img-wrap .testing-txt {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--card-gradient1) 0%,
+    var(--card-gradient2) 100%
+  );
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: min(21.75rem, 100%);
+  flex-grow: 1;
+  display: grid;
+  gap: 0.75rem;
+  align-items: center;
+  align-content: center;
+}
+/* .testing-img-wrap .testing-txt h4 {
+    margin-bottom: 0.75rem;
+  } */
+.testing-img-wrap .testing-txt ul {
+  list-style: inside;
+}
+.testing-img-wrap .testing-img {
+  max-height: 28.5rem;
+}
+
+/***** 18.FINAL DESIGN Section casestudy (prj-goodreads.html) *****/
+
+.case-study .final-design--section {
+  width: min(74rem, 100%);
+  margin-inline: auto;
+}
+.case-study .final-design--section .cs-subsection:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.case-study .final-design--section .cs-subsection h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+.final-design--section .final-design-img {
+  max-width: 15rem;
+  margin-inline: auto;
+  margin-bottom: 2.5rem;
+}
+
+.final-design--section .final-design-img-wrap {
+  display: grid;
+  gap: 2rem 1.3rem;
+  grid-template-columns: repeat(auto-fit, 17.5rem);
+  justify-content: center;
+}
+
+/***** 27.TAKEAWAYS Section casestudy (prj-goodreads.html) *****/
+
+.case-study .cs-takeaways {
+  width: min(60rem, 100%);
+  margin-inline: auto;
+}
+.case-study .cs-takeaways strong {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+/* ======================================= END case study ================= */
+
+/* ===== FOOTER STYLES [start] ===== */
 footer {
   background-color: var(--footer-bg);
   color: var(--footer-text);
@@ -487,7 +902,7 @@ footer {
 .footer-container {
   margin: 0 auto;
   padding: 0 1.5rem;
-  max-width: 1200px;
+  max-width: 75rem;
 }
 
 .footer-links {
@@ -534,8 +949,12 @@ footer .footer-bottom-container {
   font-size: 0.875rem;
   color: var(--copyright-text);
 }
+/* ===== FOOTER STYLES [end] ===== */
 
-/* ===== ABOUT PAGE STYLES ===== */
+
+
+/* ============================== ABOUT PAGE STYLES [start] (about.html) ===== */
+
 /* Main grid layout for about page */
 .about-page-grid {
   display: grid;
@@ -595,12 +1014,12 @@ footer .footer-bottom-container {
   line-height: 1.7;
 }
 
-.title {
+.bio .title {
   font-weight: 900;
 }
 
-.highlight {
-  font-weight: 900;
+.bio .highlight {
+  font-weight: 800;
 }
 
 .moon-emoji {
@@ -626,7 +1045,7 @@ footer .footer-bottom-container {
 .job h3,
 .degree h3 {
   font-size: 1rem;
-  font-weight: 900;
+  font-weight: 800;
   margin-bottom: 0.25rem;
 }
 
@@ -645,7 +1064,8 @@ footer .footer-bottom-container {
   font-size: 0.875rem;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
+/* ========================================= RESPONSIVE STYLES ===== */
+
 /* About page responsive styles */
 @media (max-width: 1024px) {
   /* Only apply to about page */
@@ -663,14 +1083,22 @@ footer .footer-bottom-container {
   }
 }
 
+@media (max-width: 500px) {
+  .ideation--section .cs-wireframe .wireframe-img-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 630px) {
+  .final-design--section .final-design-img-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 600px) {
   /* Adjust footer layout for smaller screens */
   footer .footer-bottom-container {
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 1.5rem;
-    gap: 1.5rem;
   }
 
   /* Redefine about page grid for smaller screens */
@@ -684,11 +1112,47 @@ footer .footer-bottom-container {
       "contact";
     gap: 2rem;
   }
+  .ideation--section .brainstorming-img-wrap {
+    grid-template-columns: 1fr;
+  }
+}
 
-  /* Adjust profile image for smaller screens */
-  .profile-image {
-    max-width: 100%;
-    margin: 0 auto;
+/* Mobile styles - applies to case study pages */
+@media (max-width: 760px) {
+
+  /* goodreads case study */
+
+  /* gpt help start */
+  .case-study .screen-img-wrap {
+    grid-template-columns: repeat(2, minmax(3rem, 1fr));
+    gap: 0.75rem;
+  }
+  /* .case-study .screen-img-wrap {
+    min-width: 0;    
+    width: 100%;
+  } */
+  .cs-problem-discovery .section-content {
+    grid-template-columns: 1fr;
+  }
+  .cs-problem-discovery .section-img {
+    max-width: 40%;
+    min-width: 0;
+    justify-self: center;
+  }
+
+  /* gpt help end */
+}
+
+/* @media(max-width:490px){
+  .ideation--section .cs-wireframe .wireframe-img-wrap{
+    grid-template-columns: repeat(auto-fit,180px);
+}
+} */
+
+/* > 760px: FOUR columns; cells can shrink but will expand up to fill the row */
+@media (min-width: 761px) {
+  .case-study .screen-img-wrap {
+    grid-template-columns: repeat(4, minmax(3rem, 1fr));
   }
 }
 
@@ -704,20 +1168,6 @@ footer .footer-bottom-container {
     font-size: 1.25rem;
     margin-bottom: 2rem;
   }
-
-  /* .social-links {
-    margin-bottom: 4rem;
-    gap: 12px;
-  }
-
-  .social-links a {
-    width: 48px;
-    height: 48px;
-  } */
-
-  /* .project-card {
-    height: 200px;
-  } */
 
   /* About page specific styles */
   .bio p {
@@ -791,5 +1241,3 @@ footer .footer-bottom-container {
     transform: translateY(0);
   }
 }
-
-/* Cover-goodreads */
