@@ -166,7 +166,7 @@
   padding: 0;
   box-sizing: border-box;
   /* add border around eveything */
-  outline: 1px dashed rgba(255, 0, 0, 0.2);
+  /* outline: 1px dashed rgba(255, 0, 0, 0.2); */
 }
 
 body {
